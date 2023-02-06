@@ -1,4 +1,5 @@
 //import 'package:alhamwi_test/module_question/ui/screens/questions_screen.dart';
+import 'package:alhamwi_test/consts/colors_const.dart';
 import 'package:alhamwi_test/module_product/product_routes.dart';
 import 'package:alhamwi_test/module_product/ui/screens/products_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: widget.productsScreen,
       floatingActionButton: FloatingActionButton(
+        backgroundColor: ColorsConst.mainColor,
         onPressed: (){
                     Navigator.of(context).pushNamed(ProductRoutes.ADD_PRODUCTS_SCREEN);
 

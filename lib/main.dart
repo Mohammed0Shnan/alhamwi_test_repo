@@ -1,5 +1,5 @@
-
 import 'dart:async';
+import 'package:alhamwi_test/consts/colors_const.dart';
 import 'package:alhamwi_test/di/components/app.component.dart';
 import 'package:alhamwi_test/module_home/navigator_module.dart';
 import 'package:alhamwi_test/module_offline_mode/bloc/connection_bloc.dart';
@@ -8,19 +8,19 @@ import 'package:alhamwi_test/module_splash/splash_module.dart';
 import 'package:alhamwi_test/module_splash/splash_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   /// di
   final container = await AppComponent.create();
 
-/// Your App Is Here ...
-  runApp( container.app,);
+  /// Your App Is Here ...
+  runApp(
+    container.app,
+  );
 }
-
-
 
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
@@ -29,26 +29,25 @@ class MyApp extends StatefulWidget {
   final NavigatorModule _navigatorModule;
   final ProductModule _productModule;
   final InternetService internetService;
-  MyApp(this._splashModule, this._navigatorModule,this._productModule,this.internetService);
+  MyApp(this._splashModule, this._navigatorModule, this._productModule,
+      this.internetService);
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-Timer? _timer;
+  Timer? _timer;
   @override
   void initState() {
-
-
     super.initState();
   }
 
-@override
-void deactivate() {
+  @override
+  void deactivate() {
+    super.deactivate();
+  }
 
-  super.deactivate();
-}
   @override
   Widget build(BuildContext context) {
     Map<String, WidgetBuilder> routes = {};
@@ -64,11 +63,20 @@ void deactivate() {
     );
   }
 
-  Future<Widget> configuratedApp(Map<String, WidgetBuilder> routes,) async {
-
-    return  BlocProvider<InternetService>(
-      create: (context) => widget.internetService ,
+  Future<Widget> configuratedApp(
+    Map<String, WidgetBuilder> routes,
+  ) async {
+    return BlocProvider<InternetService>(
+      create: (context) => widget.internetService,
       child: MaterialApp(
+        theme: Theme.of(context).copyWith(
+  colorScheme: Theme.of(context).colorScheme.copyWith(
+        primary:  ColorsConst.mainColor,
+      ),
+      primaryColor: ColorsConst.mainColor,
+    
+      ),
+    
         debugShowCheckedModeBanner: false,
         title: 'AlHAMWI TEST',
         routes: routes,
@@ -76,10 +84,9 @@ void deactivate() {
       ),
     );
   }
+
   @override
   void dispose() {
     super.dispose();
   }
 }
-
-

@@ -47,13 +47,12 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
     return Scaffold(
       key: _scaffoldState,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87),
         title: Text(
           'Add Product',
              style: TextStyle(
-              fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+              fontFamily: 'Dubai',
+              fontSize: 22, color: Colors.white),
         ),
-        backgroundColor: Colors.blue,
         elevation: 0,
         centerTitle: false,
         // automaticallyImplyLeading: false,
@@ -77,7 +76,8 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold)),
+                              fontFamily: 'Dubai',
+                              )),
                       SizedBox(
                         height: 8,
                       ),
@@ -112,6 +112,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                                   hintStyle: TextStyle(
                                       color: Colors.black26,
                                       fontWeight: FontWeight.w800,
+                                      fontFamily: 'Dubai',
                                       fontSize: 13)
 
                                   //S.of(context).name,
@@ -134,7 +135,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold)),
+                              fontFamily: 'Dubai',)),
                       SizedBox(
                         height: 8,
                       ),
@@ -191,7 +192,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                           style: TextStyle(
                               color: Colors.black54,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold)),
+                              fontFamily: 'Dubai',)),
                       SizedBox(
                         height: 8,
                       ),
@@ -225,7 +226,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                                   hintText: 'Price .',
                                   hintStyle: TextStyle(
                                       color: Colors.black26,
-                                      fontWeight: FontWeight.w800,
+                                      fontFamily: 'Dubai',
                                       fontSize: 13)
 
                                   //S.of(context).name,
@@ -251,7 +252,6 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                       ),
                       Center(
                         child: Obx(() {
-                        
                           if (widget.statemanagmet.add_product_loading.value) {
                             return Center(
                               child: CircularProgressIndicator(),
@@ -321,7 +321,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                                                         'Image Is Required')));
                                           }
                                         },
-                                        child: Text('Add Product'),
+                                        child: Text('Add Product',style: TextStyle(fontFamily: 'Dubai',),),
                                       ));
                          
                           }
@@ -342,7 +342,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                         style: TextStyle(
                             color: Colors.black54,
                             fontSize: 16,
-                            fontWeight: FontWeight.bold)),
+                            fontFamily: 'Dubai',)),
                     Container(
                       height: size.height * 0.4,
                       margin: EdgeInsets.all(16),
@@ -353,7 +353,7 @@ class _AddProductsScreenState extends State<AddProductsScreen> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                       content: Text(
-                                          'Product image successful uploaded')));
+                                          'Product image successful uploaded',style: TextStyle(fontFamily: 'Dubai',),)));
                             }
                           },
                           builder: (context, state) {

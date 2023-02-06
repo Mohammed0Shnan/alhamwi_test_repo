@@ -33,7 +33,10 @@ class _ProductsScreenState extends State<ProductsScreen> {
         title: Text(
           'Products',
           style: TextStyle(
-              fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+            fontFamily: 'Dubai',
+            fontSize: 22,
+            color: Colors.white,
+          ),
         ),
         actions: [
           IconButton(
@@ -61,10 +64,14 @@ class _ProductsScreenState extends State<ProductsScreen> {
         } else {
           List<ProductModel> products = widget.statemanagmet.products;
           if (products == null) {
-            return Center(child: Text('Error'));
-
+            return Center(
+                child: Text(
+              'Error',
+              style: TextStyle(fontFamily: 'Dubai'),
+            ));
           } else if (products.isEmpty)
-            return Center(child: Text('Empty'));
+            return Center(
+                child: Text('Empty', style: TextStyle(fontFamily: 'Dubai')));
           else
             return Scrollbar(
               child: ListView.separated(
@@ -129,6 +136,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                                       products[index].name,
                                       maxLines: 2,
                                       style: TextStyle(
+                                          fontFamily: 'Dubai',
                                           fontSize: 16.0,
                                           fontWeight: FontWeight.w700),
                                     ),
@@ -136,7 +144,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
-                                            fontWeight: FontWeight.w400,
+                                            fontFamily: 'Dubai',
                                             fontSize: 14.0)),
                                     Text(products[index].price.toString(),
                                         style: TextStyle(
@@ -163,7 +171,6 @@ class _ProductsScreenState extends State<ProductsScreen> {
             );
         }
       }),
-     
     );
   }
 }

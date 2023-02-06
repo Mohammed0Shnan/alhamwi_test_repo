@@ -44,13 +44,12 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
     return Scaffold(
         key: _scaffoldState,
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
             'Update Product',
                style: TextStyle(
+                fontFamily: 'Dubai',
               fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          backgroundColor: Colors.blue,
           elevation: 0,
           centerTitle: false,
           // automaticallyImplyLeading: false,
@@ -91,7 +90,7 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
+                                    fontFamily: 'Dubai',)),
                             SizedBox(
                               height: 8,
                             ),
@@ -267,7 +266,7 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
                                   duration: Duration(milliseconds: 200),
                                   clipBehavior: Clip.antiAlias,
                                   height: 50,
-                                  width: 300,
+                                  width: 350,
                                   padding: EdgeInsets.all(widget.stateManagment
                                           .update_product_loading.value
                                       ? 8
@@ -324,12 +323,13 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
                                                         'Image Is Required')));
                                           }
                                         },
-                                        child: Text('Update Product'),
+                                        child: Text('Update Product',style: TextStyle(fontFamily: 'Dubai',),),
                                       ),
                                       SizedBox(
                                         width: 30,
                                       ),
                                       MaterialButton(
+                                        padding: EdgeInsets.symmetric(horizontal: 8.0),
                                         color: Colors.red,
                                         onPressed: () {
                                           widget.stateManagment
@@ -348,9 +348,13 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
                                             }
                                           });
                                         },
-                                        child: Text(
-                                          'Delete Product',
-                                          style: TextStyle(color: Colors.white),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                          child: Text(
+                                            'Delete Product',
+                                            
+                                            style: TextStyle(fontFamily: 'Dubai',color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -370,7 +374,7 @@ class _UpdateProductsScreenState extends State<UpdateProductsScreen> {
                               style: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.bold)),
+                                  fontFamily: 'Dubai',)),
                           Container(
                             height: size.height * 0.4,
                             margin: EdgeInsets.all(16),

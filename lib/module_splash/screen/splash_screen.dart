@@ -17,7 +17,6 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _getNextRoute().then((route) async{
-        await Future.delayed(Duration(seconds: 1));
         Navigator.of(context).pushNamedAndRemoveUntil(route, (route) => false);
       });
     });
@@ -30,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 
